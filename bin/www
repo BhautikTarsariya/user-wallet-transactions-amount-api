@@ -9,7 +9,7 @@ var debug = require('debug')('e-launch-2:server');
 var http = require('http');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://Chetan:Chetan02@cluster0.q8se7xx.mongodb.net/E-Launch-2?retryWrites=true&w=majority').then(() => {
+mongoose.connect(process.env.MONGO_URI).then(() => {
   console.log("DB is Connected");
 }).catch((err) => {
   console.log(err);
